@@ -20,6 +20,10 @@
             .span12
               = render 'layouts/messages'
               = yield
-          %footer
-      / ! end of .container
-    / ! end of #main
+          %footer.navbar.navbar-fixed-bottom
+            %nav.navbar-inner
+              .container
+                %p.navbar-text.text-info                    
+                  %a{:href=>"http://openjaf.com"}
+                    &copy; OpenJAF
+                  = "#{Time.now.year}"
