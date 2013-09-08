@@ -1,2 +1,10 @@
 <h1>Cars#index</h1>
 <p>Find me in app/views/cars/index.html.erb</p>
+
+  <%@hotel_names.each do |u|%>
+    <tr>
+      <td><%=u[:id]%></td>
+      <td><%=u[:body]%></td>      
+      <td><%=u[:title]%></td>  
+    </tr>
+  <% end %>  

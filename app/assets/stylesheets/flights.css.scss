@@ -1,3 +1,27 @@
 // Place all the styles related to the Flights controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search_box {
+background-color: #D4D4D4;
+}
+
+#item_info{
+background-color: #D4D4D4;
+}
+
+.ida-flight {
+    height: 16px;
+    width: 16px;
+    background-image: url('ida_vuelta.png');
+    background-position: 0px 0px;
+    border: none;
+}
+
+.vuelta-flight {
+    height: 16px;
+    width: 16px;
+    background-image: url('ida_vuelta.png');
+    background-position: 0px -16px;
+    border: none;
+}

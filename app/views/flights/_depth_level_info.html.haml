@@ -1,5 +1,6 @@
 %table.table.table-hover.table-condensed
   %tr
+    %th 
     %th Leave
     %th Arrive
     %th Duration
@@ -10,7 +11,9 @@
     - 1.upto(colum) do
       %tr.text-info
         %td 
-          %input{:type => "checkbox"}
+          %label.radio
+            %input#optionsRadios1{:name => "optionsRadios", :type => "radio", :value => "option1"}
+        %td         
           = (Time.now + 3600*rand(10)).strftime("at %I:%M%p")  
         %td 
           = (Time.now + 3600*rand(10)).strftime("at %I:%M%p")  
@@ -18,8 +21,9 @@
           = "#{2 + rand(16)} hours"          
         %td 
           = rand(5)  
-        %td 
-          Cubana de aviación                          
         %td
-          %small
-            %span.label.label-info Book »
+          - airlines = {:aeromexico => "Aeromexico", :air_europa => "Air Europa", :air_france => "Air Franse", :delta => "Delta", :iberia => "Iberia",
+                        :klm => "KLM", :lufthansa => "Luftansa", :united_airlines => "United Airlines", :us_airways => "US Airways"}                        
+          - key = rand 9              
+          = image_tag "airlines/#{airlines.keys[key]}.png"                        
+          = airlines.values[key]        

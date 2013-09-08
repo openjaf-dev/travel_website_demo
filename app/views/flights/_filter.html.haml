@@ -1,0 +1,132 @@
+%h4 
+  Filter by
+  %h5 
+    %table.table.table-hover.table-condensed
+      %tr
+        %th Stops 
+      %tr
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox", :checked =>""} 
+              %small Show all
+        %td 
+          %small 9          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Non-stop  
+        %td 
+          %small 1          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small 1 Stop
+        %td 
+          %small 5          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small 2 or more stops                       
+        %td 
+          %small 3
+              
+      %tr
+        %th Departure time 
+      %tr
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox", :checked =>""} 
+              %small Show all
+        %td 
+          %small 9          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Early morning (12AM to 6AM)  
+        %td 
+          %small 1          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Morning (6AM to 12PM)
+        %td 
+          %small 5          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Afternoon (12PM to 8PM)                       
+        %td 
+          %small 3
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Night (8PM to 6AM)                       
+        %td 
+          %small 3                      
+          
+      %tr
+        %th Return time 
+      %tr
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox", :checked =>""} 
+              %small Show all
+        %td 
+          %small 9          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Early morning (12AM to 6AM)  
+        %td 
+          %small 1          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Morning (6AM to 12PM)
+        %td 
+          %small 5          
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Afternoon (12PM to 8PM)                       
+        %td 
+          %small 3
+      %tr          
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox"} 
+              %small Night (8PM to 6AM)                       
+        %td 
+          %small 3                      
+
+      - airlines = {:aeromexico => "Aeromexico", :air_europa => "Air Europa", :air_france => "Air Franse", :delta => "Delta", :iberia => "Iberia",
+                        :klm => "KLM", :lufthansa => "Luftansa", :united_airlines => "United Airlines", :us_airways => "US Airways"}
+      %tr
+        %th Airlines
+      %tr
+        %td 
+          %label.checkbox
+            %input{:type => "checkbox", :checked =>""} 
+              %small Show all                
+        %td 
+          %small 20              
+      - for key in 0..8   
+        %tr
+          %td 
+            %label.checkbox
+              %input{:type => "checkbox"} 
+                %small
+                  = image_tag "airlines/#{airlines.keys[key]}.png"
+                  = airlines.values[key]
+          %td 
+            %small= rand(15)          

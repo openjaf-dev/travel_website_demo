@@ -1,11 +1,13 @@
-.container-fluid.success
+.container-fluid
   .row-fluid
     .span2
       = render 'search_box'
+      %br
+      = render 'filter'
     .span10
       .btn-toolbar.span5
         = render "order_by"
-      %ul.unstyled
-        - 1.upto(10) do
-          = render "item"
+    .span10          
+      - 1.upto(10) do
+        = render "item"
    

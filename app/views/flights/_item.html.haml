@@ -1,14 +1,28 @@
-%li.row-fluid{:itemscope => "", :itemtype => "http://schema.org/Product"}
+.row-fluid{:itemscope => "", :itemtype => "http://schema.org/Product"}
   .row-fluid
-    .span9
-      %strong Departure
-      = render 'item_info'
-      %small
-        = render  'depth_level_info'
-      %strong Return  
-      = render 'item_info'
-      %small
-        = render  'depth_level_info'  
-    .span3
+    .span10
+      - first_city = Faker::Address.city
+      - secound_city = Faker::Address.city        
+      %strong 
+        Departure
+        = image_tag('airplane_takeoff-26.png')
+        = first_city        
+        = image_tag('airplane_landing-26.png')    
+        = secound_city 
+        %i.icon-calendar
+        Tuesday 27 August, 2013
+      %small= render 'depth_level_info'
+      %strong 
+        Return
+        = image_tag('airplane_takeoff-26.png')
+        = secound_city 
+        = image_tag('airplane_landing-26.png')    
+        = first_city 
+        %i.icon-calendar         
+        Tuesday 27 August, 2013
+      %small= render 'depth_level_info'                        
+    .span2
+      - 1.upto(6) do
+        %br/     
       = render 'base_price'  
 %br/      

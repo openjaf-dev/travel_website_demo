@@ -5,7 +5,7 @@
     %br/
     %input.span12{:placeholder => "City name or airport", :type => "text"}/
   %h5
-    To:
+    To
     %br/
     %input.span12{:placeholder => "City name or airport", :type => "text"}/  
   %h5
@@ -47,15 +47,6 @@
       %option Jun, 2014
       %option Jul, 2014
   .row-fluid
-    - text_type = {:Adults => 2, :Children => 0, :Infant => 0}
-    - text_type.keys.each do |key|
-      %h6.span4      
-        = key
-        %br/
-        %select.span11{:placeholder => text_type[key]}
-          - for i in 1..10 do
-            %option= i  
-  .row-fluid
     - text_type = {"Leave time" => "No preference", "Return time" => "No preference"}
     - text_type.keys.each do |key|
       %h6.span6      
@@ -68,6 +59,15 @@
                 %option= "#{j} AM" 
               - else  
                 %option= "#{j} PM"                                    
+  .row-fluid
+    - text_type = {:Adults => 2, :Children => 0, :Infant => 0}
+    - text_type.keys.each do |key|
+      %h6.span4      
+        = key
+        %br/
+        %select.span11{:placeholder => text_type[key]}
+          - for i in 1..10 do
+            %option= i                  
   %br/
   %label.checkbox
     %input{:type => "checkbox"}  One way

@@ -14,6 +14,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'rolify'
 gem 'simple_form'
+gem 'rest-client'
 group :assets do
   gem 'therubyracer', :platform=>:ruby
 end
